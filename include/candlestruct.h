@@ -9,7 +9,7 @@ struct Candle {
   double high {0.0};
   double low {0.0};
   double close {0.0};
-  Volume firstPair {"first", 0.0};
-  Volume secondPair {"second", 0.0};
+  Volume firstpair {"first", 0.0};
+  Volume secondpair {"second", 0.0};
 };
 

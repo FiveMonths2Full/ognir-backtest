@@ -13,7 +13,7 @@ int main (int argc, char* argv[]) {
   if (candleList.empty())
     std::cout << "Empty";
   for (auto const& e : candleList) {
-    std::cout <<  e.unix << ' ' << e.timestamp << ' ' << e.symbol << e.open << '\n';
+    std::cout <<  e.unix << ' ' << e.timestamp << ' ' << e.symbol << e.open << e.high << e.low << e.close << e.firstpair.name << e.firstpair.volume << e.secondpair.name << e.secondpair.volume << '\n';
   }
 
   return 0;

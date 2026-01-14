@@ -30,7 +30,7 @@ std::vector<Candle> parse (std::ifstream& in) {
   
 
   Candle candle {};
-  std::vector<Candle> c {};
+  std::vector<Candle> candlelist {};
   std::string line {};
   std::getline(in, line);
   std::getline(in, line);
@@ -55,9 +55,25 @@ std::vector<Candle> parse (std::ifstream& in) {
   candle.open = o;
   line = line.substr(location +1, line.length());
 
+  location = line.find(',');
+  double h {std::stod((line.substr(0,location)))};
+  candle.high = h;
+  line = line.substr(location +1, line.length());
+  
+  location = line.find(',');
+  double l {std::stod((line.substr(0,location)))};
+  candle.low = l;
+  line = line.substr(location +1, line.length());
 
-  c.push_back(candle);
-  return c;
+  location = line.find(',');
+  double c {std::stod((line.substr(0,location)))};
+  candle.close = c;
+  line = line.substr(location +1, line.length());
+
+
+
+  candlelist.push_back(candle);
+  return candlelist;
 }
   
 
