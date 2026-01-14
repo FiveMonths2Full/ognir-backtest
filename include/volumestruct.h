@@ -1,5 +1,5 @@
 #pragma once
-#include <string_view>
+#include <string>
 struct Volume {
   std::string_view pairName {"ticker"};
   double amount {0};

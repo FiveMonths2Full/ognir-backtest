@@ -35,7 +35,7 @@ std::vector<Candle> parse (std::ifstream& in) {
   std::getline(in, line);
   std::getline(in, line);
   auto location {line.find(',')};
-  double u {std::stod((line.substr(0,location)))};
+  double u {std::stod((line.substr(0,location))};
   candle.unix = u;
   line = line.substr(location +1, line.length());
 
@@ -43,12 +43,6 @@ std::vector<Candle> parse (std::ifstream& in) {
   std::string t {(line.substr(0,location))};
   candle.timestamp = t;
   line = line.substr(location +1, line.length());
-
-  location = line.find(',');
-  std::string s {(line.substr(0,location))};
-  candle.symbol = t;
-  line = line.substr(location +1, line.length());
-
 
   location = line.find(',');
   double o {std::stod((line.substr(0,location)))};
