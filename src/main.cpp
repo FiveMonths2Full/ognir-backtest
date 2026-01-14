@@ -1,6 +1,6 @@
 #include <iostream>
-#include <
-#include "candlestruct.h"
+#include <fstream>
+#include "parse.h"
 int main (int argc, char* argv[]) {
   if (argc < 2)
     return 1;
@@ -8,11 +8,8 @@ int main (int argc, char* argv[]) {
   std::ifstream file {path};
   if (!file.is_open())
     return 1;
-  else 
-    parse(std::ifstream in);
 
-  std::cout << "First line dropped!\n";
-  Candle c {"1/2/2000",1,2,3,4,{"first", 1},{"second", 2}};
-  std::cout << c.timestamp;
+  std::vector<Candle> candleList {parse(file)};
+
   return 0;
 }
